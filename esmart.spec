@@ -1,6 +1,6 @@
 %define	name	esmart
-%define	version 0.9.0.006
-%define release 0.%{cvsrel}.1mdk
+%define	version 0.9.0.007
+%define release %mkrel 1
 
 %define cvsrel 20060323
 
@@ -15,7 +15,7 @@ Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://get-e.org/
-Source: 	%{name}-%{cvsrel}.tar.bz2
+Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel ecore-devel
 BuildRequires:	imlib2-devel
@@ -47,10 +47,9 @@ Provides: %name-devel
 %{name} development headers and libraries
 
 %prep
-%setup -q -n %name
+%setup -q
 
 %build
-./autogen.sh
 %configure2_5x
 %make
 
@@ -85,3 +84,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/Esmart
 %{_bindir}/%name-config
 %multiarch %multiarch_bindir/%name-config
+
