@@ -1,6 +1,6 @@
 %define	name	esmart
 %define	version 0.9.0.008
-%define release %mkrel 1
+%define release %mkrel 3
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -18,6 +18,7 @@ BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.038, ecore-devel >= 0.9.9.038
 BuildRequires:	imlib2-devel
 BuildRequires:	epsilon-devel >= 0.3.0.008, edje-devel >= 0.5.0.038
+Buildrequires:  edb-devel >= 1.0.5.007
 BuildRequires:	multiarch-utils
 BuildRequires:  libtool-devel
 
