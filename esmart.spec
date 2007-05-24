@@ -1,8 +1,6 @@
 %define	name	esmart
-%define	version 0.9.0.007
+%define	version 0.9.0.008
 %define release %mkrel 1
-
-%define cvsrel 20060323
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -17,9 +15,9 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel ecore-devel
+BuildRequires:	evas-devel >= 0.9.9.038, ecore-devel >= 0.9.9.038
 BuildRequires:	imlib2-devel
-BuildRequires:	epsilon-devel edje-devel
+BuildRequires:	epsilon-devel >= 0.3.0.008, edje-devel >= 0.5.0.038
 BuildRequires:	multiarch-utils
 BuildRequires:  libtool-devel
 
