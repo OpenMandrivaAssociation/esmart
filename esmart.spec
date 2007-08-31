@@ -15,9 +15,9 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.038, ecore-devel >= 0.9.9.038
+BuildRequires:	evas-devel >= 0.9.9.041, ecore-devel >= 0.9.9.041
 BuildRequires:	imlib2-devel
-BuildRequires:	epsilon-devel >= 0.3.0.008, edje-devel >= 0.5.0.038
+BuildRequires:	epsilon-devel >= 0.3.0.008, edje-devel >= 0.5.0.038, edje
 Buildrequires:  edb-devel >= 1.0.5.007
 BuildRequires:	multiarch-utils
 BuildRequires:  libtool-devel
