@@ -1,6 +1,6 @@
 %define	name	esmart
-%define	version 0.9.0.008
-%define release %mkrel 5
+%define version 0.9.0.011
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
