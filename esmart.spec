@@ -1,10 +1,10 @@
 %define	name	esmart
-%define version 0.9.0.011
+%define version 0.9.0.042
 %define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: 	Enlightenment collection of evas smart objects
 Name: 		%{name}
@@ -12,14 +12,14 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://get-e.org/
+URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.041, ecore-devel >= 0.9.9.041
+BuildRequires:	evas-devel
+BuildRequires:	ecore-devel
 BuildRequires:	imlib2-devel
-BuildRequires:	epsilon-devel >= 0.3.0.008, edje-devel >= 0.5.0.038, edje
-Buildrequires:  edb-devel >= 1.0.5.007
-BuildRequires:	multiarch-utils
+BuildRequires:	epsilon-devel
+BuildRequires:	edje-devel, edje
 BuildRequires:  libtool-devel
 
 %description
@@ -55,8 +55,6 @@ Provides: %name-devel
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
-%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -82,6 +80,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_includedir}/Esmart
-%{_bindir}/%name-config
-%multiarch %multiarch_bindir/%name-config
 
