@@ -1,6 +1,6 @@
 %define	name	esmart
 %define version 0.9.0.042
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -15,11 +15,11 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel
-BuildRequires:	ecore-devel
+BuildRequires:	evas-devel >= 0.9.9.042
+BuildRequires:	ecore-devel >= 0.9.9.042
 BuildRequires:	imlib2-devel
-BuildRequires:	epsilon-devel
-BuildRequires:	edje-devel, edje
+BuildRequires:	epsilon-devel >= 0.3.0.012
+BuildRequires:	edje-devel >= 0.5.0.042, edje >= 0.5.0.042
 BuildRequires:  libtool-devel
 
 %description
