@@ -49,6 +49,7 @@ Provides: %name-devel
 %setup -q
 
 %build
+export CFLAGS="%{optflags} -lecore"
 %configure2_5x
 %make
 
