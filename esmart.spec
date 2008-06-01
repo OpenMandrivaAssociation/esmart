@@ -6,6 +6,9 @@
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} -d
 
+%define _disable_ld_no_undefined 1
+%define _disable_ld_as_needed 1
+
 Summary: 	Enlightenment collection of evas smart objects
 Name: 		%{name}
 Version: 	%{version}
@@ -49,7 +52,6 @@ Provides: %name-devel
 %setup -q
 
 %build
-export CFLAGS="%{optflags} -lecore"
 %configure2_5x
 %make
 
