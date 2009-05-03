@@ -1,13 +1,11 @@
 %define	name	esmart
 %define version 0.9.0.050
-%define release %mkrel 1
+%define svnrel	20090503
+%define release %mkrel 2.%{svnrel}.1
 
 %define major 	0
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} -d
-
-%define _disable_ld_no_undefined 1
-%define _disable_ld_as_needed 1
 
 Summary: 	Enlightenment collection of evas smart objects
 Name: 		%{name}
@@ -19,7 +17,7 @@ URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.050
-BuildRequires:	ecore-devel >= 0.9.9.050
+BuildRequires:	ecore-devel >= 0.9.9.060
 BuildRequires:	imlib2-devel
 BuildRequires:	epsilon-devel >= 0.3.0.012
 BuildRequires:	edje-devel >= 0.5.0.050, edje >= 0.5.0.050
@@ -42,16 +40,16 @@ Libraries for %{name}
 Summary: Headers and development libraries from %{name}
 Group: Development/Other
 Requires: %libname = %{version}
-Provides: lib%{name}-devel
-Provides: %name-devel
+Provides: %name-devel = %{version}-%{release}
 
 %description -n %libnamedev
 %{name} development headers and libraries
 
 %prep
-%setup -q
+%setup -qn %name
 
 %build
+NOCONFIGURE=1 ./autogen.sh
 %configure2_5x
 %make
 
