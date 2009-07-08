@@ -1,7 +1,7 @@
 %define	name	esmart
 %define version 0.9.0.050
-%define svnrel	20090503
-%define release %mkrel 2.%{svnrel}.2
+%define svnrel	20090708
+%define release %mkrel 2.%{svnrel}.1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -20,6 +20,7 @@ BuildRequires:	evas-devel >= 0.9.9.050
 BuildRequires:	ecore-devel >= 0.9.9.060
 BuildRequires:	imlib2-devel
 BuildRequires:	epsilon-devel >= 0.3.0.012
+BuildRequires:	cairo-devel
 BuildRequires:	edje-devel >= 0.5.0.050, edje >= 0.5.0.050
 BuildRequires:  libtool-devel
 
