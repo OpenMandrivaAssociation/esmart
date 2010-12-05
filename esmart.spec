@@ -1,7 +1,7 @@
 %define	name	esmart
 %define version 0.9.0.050
 %define svnrel	20090708
-%define release %mkrel 2.%{svnrel}.2
+%define release %mkrel 2.%{svnrel}.3
 
 %define major 	0
 %define libname %mklibname %{name} %major
